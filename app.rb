@@ -36,7 +36,7 @@ title = pdf_filename.split('/').last.split('.').first if title.nil? || title.siz
 date = Docsplit.extract_date(pdf_filename)
 
 #load blacklist into array, remove all of them, chop string to 100,000
-blacklist = IO.read("/Users/matt/Desktop/5000-wordlist.txt").split("\n")
+blacklist = IO.read("5000-wordlist.txt").split("\n")
 s = s.split.delete_if{|x| blacklist.include?(x.downcase)}.join(' ')
 s = s[0..999999]
 
